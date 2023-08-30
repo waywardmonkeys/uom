@@ -13,7 +13,7 @@
 ///   represented as a `typenum` type-level integer (e.g. `N1`, `Z0`, `P1`, `P2`, ...).
 /// * `$kind`: [Kind][kind] of the quantity. Optional. This variable should only be specified when
 ///   defining a quantity that has the same dimensions as another quantity but isn't comparable.
-///   When not specified [`uom::Kind`](trait.Kind.html) is used.
+///   When not specified [`uom::Kind`](crate::Kind) is used.
 /// * `$unit`: Unit name (e.g. `meter`, `foot`).
 /// * `$conversion`: Conversion (coefficient and constant factor) from the unit to the base unit of
 ///   the quantity (e.g. `3.048_E-1` to convert `foot` to `meter`. `1.0_E0, 273.15_E0` to convert

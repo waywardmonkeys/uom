@@ -251,8 +251,8 @@ macro_rules! system {
         /// * <https://jcgm.bipm.org/vim/en/1.1.html>
         ///
         /// ## Generic Parameters
-        /// * `D`: Quantity dimension. See [`Dimension`](./trait.Dimension.html).
-        /// * `U`: Quantity base units. See [`Units`](./trait.Units.html).
+        /// * `D`: Quantity dimension. See [`Dimension`].
+        /// * `U`: Quantity base units. See [`Units`].
         /// * `V`: Quantity value underlying storage type.
         #[repr(transparent)]
         pub struct Quantity<D, U, V>
@@ -261,10 +261,10 @@ macro_rules! system {
             U: Units<V> + ?Sized,
             V: $crate::num::Num + $crate::Conversion<V>,
         {
-            /// Quantity dimension. See [`Dimension`](./trait.Dimension.html).
+            /// Quantity dimension. See [`Dimension`].
             pub dimension: $crate::lib::marker::PhantomData<D>,
 
-            /// Quantity base units. See [`Units`](./trait.Units.html).
+            /// Quantity base units. See [`Units`].
             pub units: $crate::lib::marker::PhantomData<U>,
 
             /// Quantity value stored in the base units for the quantity.
@@ -1665,7 +1665,7 @@ macro_rules! system {
         /// [quantities]: https://jcgm.bipm.org/vim/en/1.3.html
         pub type Units = dyn __system::Units<$V, $($name = __system::$name::$U,)+>;
 
-        $(/// [`Quantity`](struct.Quantity.html) type alias using the given base units.
+        $(/// [`Quantity`] type alias using the given base units.
         #[allow(dead_code)]
         #[allow(unused_qualifications)]
         pub type $quantity = __system::$module::$quantity<Units, $V>;)+
